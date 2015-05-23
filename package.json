@@ -12,6 +12,8 @@
   "dependencies": {
     "express": "~4.12.3",
     "socket.io": "~1.3.5",
-    "pmx": "~0.3.11"
+    "pmx": "~0.3.11",
+    "hs.gg-config": "git+https://github.com/hearthstone-gg/config.git",
+    "yargs": "~3.9.1"
   }
 }
