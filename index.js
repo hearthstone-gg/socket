@@ -8,9 +8,7 @@ var argv = require('yargs').argv;
 var config = require('hs.gg-config').get(argv.env || 'local').services.socket;
 
 io.on('connection', function(socket) {
-	console.log('a user connected');
-	
-	socket.on('authed', function(token){
+	socket.on('subscribe', function(token){
 		socket.join(token);
 		setInterval(function() {
 			io.to(token).emit('ping', Math.random());
