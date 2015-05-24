@@ -9,9 +9,13 @@ var config = require('hs.gg-config').get(argv.env || 'local').services.socket;
 
 io.on('connection', function(socket) {
 	console.log('a user connected');
-	// setInterval(function() {
-	// 	socket.emit('ping', Math.random());
-	// },10000);
+	
+	socket.on('authed', function(token){
+		socket.join(token);
+		setInterval(function() {
+			io.to(token).emit('ping', Math.random());
+		},10000);
+	});
 });
 
 http.listen(config.port, function() {
