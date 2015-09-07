@@ -25,5 +25,5 @@ http.listen(config.port, function() {
 	var host = http.address().address;
 	var port = http.address().port;
 
-	console.log('App sserver listening at http://%s:%s', host, port);
+	console.log('Socket server listening at http://%s:%s', host, port);
 });
